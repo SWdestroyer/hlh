@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.poi.dao.ImgDao">
+
+    <resultMap id="ImgMP" type="img">
+        <id property="imgId" column="img_id"></id>
+        <result property="imgAdd" column="img_add"></result>
+    </resultMap>
+
+    
+    <select id="selectImgByHotelId" parameterType="int" resultMap="ImgMP">
+        select * from tb_img where tb_hotel_hotel_id = #{hotelId}
+    </select>
+
+</mapper>
